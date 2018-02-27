@@ -16,3 +16,21 @@ input[type="text"] {
     color: #000000;
 }
 
+div.hpdiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.hpdiv p#hpcur {
+    margin-left: 33px;
+}
+
+label {
+    font-size: 35px;
+    margin-left: 15px;
+}
+
+.infoowner {
+    margin-left: 33px;
+    border: .1px white solid;
+}

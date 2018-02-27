@@ -14,11 +14,44 @@
         <br>
         <input type="submit" value="Do action">
     </form>
-    
-    <h2>Output</h2>
+    <h2>Player Info</h2>
+   <div class="infoowner">
+         <label for="hpdiv">HP</label>
+            <div class="hpdiv">
+                <p id="hpcur">10</p>
+                <p>/</p>
+                <p id="hpmax">10</p>
+            </div>
+    </div>
     <p id="out"></p>
     
     <script src="main.js"></script>
+    <script>
+        
+        function getInput() {
+            document.forms[0].playeraction.value.toLowerCase();
+        }
+        
+        function doOutput(out) {
+            document.getElementById("out").innerHTML += out;
+        }
+        
+        function clearOutput() {
+            document.getElementById("out").innerHTML = "";
+        }
+        
+        function doPlayerAction() {
+            playerAction(getInput(););
+        }
+        
+        function getPlayerInfo() {
+            getPlayerHP();
+            getPlayerArmor();
+            getPlayerTarget();
+            playerAction();
+        }
+        
+    </script>
 </body>
 
 </html>
