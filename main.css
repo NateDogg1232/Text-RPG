@@ -4,6 +4,7 @@ body {
     color: #fafafa;
     font-family: monospace;
     font-size: 20px;
+    padding-top: 100px;
 }
 
 input {
@@ -12,7 +13,38 @@ input {
 }
 
 input[type="text"] {
-    background-color: rgb(255,255,90);
+    background-color: #63BBFF;
     color: #000000;
+    height: 30px;
 }
 
+input[type="submit"] {
+    background-color: #63BBFF;
+    padding: 10px;
+}
+
+p#out {
+    border-radius: 5px;
+    background-color: #232323;
+    max-width: 1000px;
+    display: block;
+    margin: auto;
+}
+
+form {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 60px;
+}
+
+
+#playerinput {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#playeractionstuff {
+    margin-bottom: 10px;
+}
