@@ -1,3 +1,8 @@
+//Text based RPG (Based on the Eyes of the Lich Queen story for Dungeons and Dragons)
+
+//This JS is written to be completely independent from HTML for ease of porting.
+
+
 //Make a character object (Will be used to derive all other objects)
 function Character() {
     this.hp = 0;
