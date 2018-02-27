@@ -17,15 +17,19 @@ input[type="text"] {
     color: #000000;
     height: 30px;
 }
-
+/*
 div.hpdiv {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
+*/
 
+/*
 .hpdiv p#hpcur {
     margin-left: 33px;
 }
+*/
 
 label {
     font-size: 35px;
@@ -34,7 +38,16 @@ label {
 
 .infoowner {
     margin-left: 33px;
+    margin-right: 33px;
     border: .1px white solid;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.infoowner>* {
+    
 }
 
 input[type="submit"] {

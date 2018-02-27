@@ -20,11 +20,13 @@
 
     <h2>Player Info</h2>
    <div class="infoowner">
-         <label for="hpdiv">HP</label>
-            <div class="hpdiv">
-                <p id="hpcur">10</p>
-                <p>/</p>
-                <p id="hpmax">10</p>
+        <div class="hpdiv">
+            <label for="hpdiv">HP</label>
+                <p id="hpcur">10/10</p>
+            </div>
+        <div class="armordiv">
+            <label for="armordiv">Armor</label>
+                <p id="armor"></p>
             </div>
     </div>
 
@@ -57,6 +59,15 @@
             getPlayerArmor();
             getPlayerTarget();
             playerAction();
+        }
+        
+        function getHP() {
+            var hp = document.getElementById("hp1").innerHTML;
+            hp = getPlayerHP(); + "/" + getPlayerMaxHP();
+        }   
+
+        function getPlayerArmor() {
+            var armor = document.getElementById("armor").innerHTML;
         }
         
     </script>
