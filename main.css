@@ -29,6 +29,7 @@ p#out {
     max-width: 1000px;
     display: block;
     margin: auto;
+    padding: 20px;
 }
 
 form {
