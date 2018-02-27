@@ -6,6 +6,7 @@
 //Make a character object (Will be used to derive all other objects)
 function Character() {
     this.hp = 0;
+    this.maxHp = 0;
     this.armor = 0;
     //This will take a character object
     this.target = undefined;
@@ -43,6 +44,8 @@ function Tile() {
 mainPlayer = Player();
 function startPlayer(name) {
     mainPlayer.char.hp = 10;
+    mainPlayer.char.maxHp = 10;
+    
     mainPlayer.char.armor = 0;
     //We will update this once we start making maps
     mainPlayer.location = undefined;
@@ -52,4 +55,15 @@ function startPlayer(name) {
 
 function getPlayerHP() {
     return mainPlayer.char.hp;
+}
+
+function getPlayerMaxHP() {
+    return mainPlayer.char.maxJp;
+}
+
+//We do a player action. action is a string
+function doPlayerAction(action) {
+    if (action == "hello") {
+        
+    }
 }
