@@ -1,0 +1,18 @@
+body {
+    box-sizing: border-box;
+    background-color: #343434;
+    color: #fafafa;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+}
+
+input[type="text"] {
+    background-color: rgb(255,255,90);
+    color: #000000;
+}
+
