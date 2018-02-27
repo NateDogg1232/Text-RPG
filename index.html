@@ -9,11 +9,15 @@
 
 <body>
     <form action="" onsubmit="doPlayerAction(); return false;">
-        <label for="playeraction">Player Action:</label>
-        <input type="text" name="playeraction">
-        <br>
-        <input type="submit" value="Do action">
+        <div id="playerinput">
+            <div id="playeractionstuff">
+                <label for="playeraction">Player Action:</label>
+                <input type="text" name="playeraction">
+            </div>
+            <input type="submit" value="Do action">
+        </div>
     </form>
+
     <h2>Player Info</h2>
    <div class="infoowner">
          <label for="hpdiv">HP</label>
@@ -23,7 +27,11 @@
                 <p id="hpmax">10</p>
             </div>
     </div>
-    <p id="out"></p>
+
+    
+
+    <p id="out">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos delectus temporibus ea magni quam, repellendus. Modi dolorem, iure quod sed maiores consequuntur facilis, animi labore fuga expedita temporibus molestias illo.</p>
+
     
     <script src="main.js"></script>
     <script>
