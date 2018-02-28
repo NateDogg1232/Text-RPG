@@ -5,21 +5,26 @@
 
 //Make a character object (Will be used to derive all other objects)
 function Character() {
-    this.hp = 0;
-    this.maxHp = 0;
+    this.currentHP = 0;
+    this.maxHP = 0;
     this.armor = 0;
     //This will take a character object
-    this.target = undefined;
-
+    this.currentTarget = undefined;
     this.inventory = new Array(0);
 }
 
 //An object to store the player itself
 function Player() {
-    this.char = Character();
+    this.char = new Character();
     this.name = "";
-    this.location = Location();
+    this.currentLocation = new Location();
     this.actions = new Array(0);
+}
+
+function Enemy() {
+    this.char = new Character();
+    this.name = "";
+    this.actions = [];
 }
 
 //Object to store a location's information
@@ -28,12 +33,14 @@ function Location() {
     this.size = new Array(2);
     //This will be a matrix of tile objects
     this.map = new Array(0);
+    this.curx = 0;
+    this.cury = 0;
 }
 //We use this to comprise the map
 function Tile() {
-    this.name = "";
+    this.information = "";
     //Function to call
-    this.action = undefined;
+    this.action = null;
 }
 
 
@@ -41,29 +48,81 @@ function Tile() {
 //============================================
 //              INIT THE CHARACTER
 //============================================
-mainPlayer = Player();
+var mainPlayer = null;
+
 function startPlayer(name) {
-    mainPlayer.char.hp = 10;
-    mainPlayer.char.maxHp = 10;
-    
+    mainPlayer = new Player();
+    mainPlayer.char.currentHP = 10;
+    mainPlayer.char.maxHP = 10;
+
     mainPlayer.char.armor = 0;
     //We will update this once we start making maps
-    mainPlayer.location = undefined;
-    mainPlayer.lastAction.push(startPlayer);
+    mainPlayer.location = "undefined";
 }
 
 
 function getPlayerHP() {
-    return mainPlayer.char.hp;
+    return mainPlayer.char.currentHP;
 }
 
 function getPlayerMaxHP() {
-    return mainPlayer.char.maxJp;
+    return mainPlayer.char.maxHP;
 }
 
 //We do a player action. action is a string
-function doPlayerAction(action) {
-    if (action == "hello") {
-        
+function doPlayerAction(fullAction) {
+    var action = fullAction.split(" ");
+    switch (action[0]) {
+        //Wow. Can't believe this is our first easter egg. This is a disgrace
+        case "owo":
+        case "uwu":
+        case "vwv":
+            gameOutputClear();
+            gameOutput("What's this?");
+            break;
+        case "go":
+        case "move":
+        case "walk":
+        case "step":
+            if (action.length == 1) {
+                gameOutputClear();
+                gameOutput("Go where?");
+                break;
+            }
+            switch (action[1]) {
+                case "west":
+                    mainPlayer.actions.push(fullAction);
+                    break;
+                case "east":
+                    mainPlayer.actions.push(fullAction);
+                    break;
+                case "north":
+                    mainPlayer.actions.push(fullAction);
+                    break;
+                case "south":
+                    mainPlayer.actions.push(fullAction);
+                    break;
+            }
+            break;
+        case "usethistotest":
+            gameOutputClear();
+            gameOutput("This is a test\nOf Breaks");
+            break;
+        default:
+            gameOutputClear();
+            gameOutput("I don't recognize that action, sorry.");
+            break;
     }
+}
+
+var gameOutput = null;
+
+function setOutputFunction(func) {
+    gameOutput = func;
+}
+
+var gameOutputClear = null;
+
+function setOutputClearFunction(func) {
+    gameOutputClear = func;
 }

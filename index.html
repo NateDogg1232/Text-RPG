@@ -7,71 +7,88 @@
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
-    <form action="" onsubmit="doPlayerAction(); return false;">
+<body onload="setupPage();">
+    <form action="" onsubmit="playerAction(); return false;">
         <div id="playerinput">
             <div id="playeractionstuff">
                 <label for="playeraction">Player Action:</label>
                 <input type="text" name="playeraction">
+                <button type="button" onclick="playerAction()">fdfhjkasdk</button>
+                <input type="submit" value="Do action">
             </div>
-            <input type="submit" value="Do action">
         </div>
     </form>
 
-    <h2>Player Info</h2>
-   <div class="infoowner">
-        <div>
-            <label for="hp">HP</label>
+    <div id="playerinfo">
+        <div id="headinghack">
+            <h2>Player Info</h2>
+        </div>
+        <div class="infoowner">
+            <div>
+                <label for="hp">HP</label>
                 <p id="hpcur">10/10</p>
-        </div>
-        <div>
-            <label for="armor">Armor</label>
+            </div>
+            <div>
+                <label for="armor">Armor</label>
                 <p id="armor">0</p>
-        </div>
-        <div>
-            <label for="target">Target</label>
+            </div>
+            <div>
+                <label for="target">Target</label>
                 <p id="target">None</p>
+            </div>
         </div>
     </div>
 
-    
 
-    <p id="out">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos delectus temporibus ea magni quam, repellendus. Modi dolorem, iure quod sed maiores consequuntur facilis, animi labore fuga expedita temporibus molestias illo.</p>
 
-    
+    <p id="out">Ready Player One</p>
+
+
     <script src="main.js"></script>
     <script>
         
+        //Setup the page
+        function setupPage() {
+            setOutputFunction(doOutput);
+            setOutputClearFunction(clearOutput);
+            startPlayer();
+        }
+        
         function getInput() {
-            document.forms[0].playeraction.value.toLowerCase();
+            //Lots of sanity checks
+            return document.forms[0].playeraction.value.toLowerCase().trim().toString();
         }
-        
+
         function doOutput(out) {
-            document.getElementById("out").innerHTML += out;
+            document.getElementById("out").innerHTML += out.replace("\n", "<br>");
         }
-        
+
         function clearOutput() {
             document.getElementById("out").innerHTML = "";
         }
-        
-        function doPlayerAction() {
-            playerAction(getInput(););
-        }
-        
+
         function getPlayerInfo() {
-            getPlayerHP();
-            getPlayerArmor();
+            getHP();
             getPlayerTarget();
             playerAction();
         }
-        
+
         function getHP() {
             var hp = document.getElementById("hpcur").innerHTML;
             hp = getPlayerHP(); + "/" + getPlayerMaxHP();
-        }   
+        }
 
         function getPlayerArmor() {
             var armor = document.getElementById("armor").innerHTML;
+        }
+        
+        function clearInput() {
+            document.forms[0].playeraction.value = "";
+        }
+        
+        function playerAction() {
+            doPlayerAction(getInput());
+            clearInput();
         }
     </script>
 </body>
