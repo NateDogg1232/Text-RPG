@@ -17,19 +17,6 @@ input[type="text"] {
     color: #000000;
     height: 30px;
 }
-/*
-div.hpdiv {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-*/
-
-/*
-.hpdiv p#hpcur {
-    margin-left: 33px;
-}
-*/
 
 label {
     font-size: 35px;
@@ -46,8 +33,16 @@ label {
     justify-content: space-around;
 }
 
-.infoowner>* {
-    
+p#hpcur {
+    margin-left: 5px;
+}
+
+p#armor {
+    margin-left: 58px;
+}
+
+p#target {
+    margin-left: 54px;
 }
 
 input[type="submit"] {
