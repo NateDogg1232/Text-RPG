@@ -135,10 +135,6 @@ function doPlayerAction(fullAction) {
             output.clear();
             output.print("This is a test\nOf Breaks");
             break;
-            
-            
-            
-            
         //This always needs to be by the default
         case "ur":
             if (action[1]=="mom") {
