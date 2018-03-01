@@ -108,6 +108,10 @@ function doPlayerAction(fullAction) {
             gameOutputClear();
             gameOutput("This is a test\nOf Breaks");
             break;
+        case "urmomgay":
+            gameOutputClear();
+            gameOutput("no u");
+            break;
         default:
             gameOutputClear();
             gameOutput("I don't recognize that action, sorry.");
