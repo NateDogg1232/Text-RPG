@@ -14,9 +14,8 @@ function Character() {
 }
 
 //An object to store the player itself
-function Player() {
+function Player(c) {
     this.char = new Character();
-    this.name = "";
     this.currentLocation = new Location();
     this.actions = new Array(0);
 }
@@ -28,21 +27,31 @@ function Enemy() {
 }
 
 //Object to store a location's information
-function Location() {
-    this.name = "";
-    this.size = new Array(2);
+function Location(name, sizex, sizey) {
+    this.name = name;
+    this.size = [sizex, sizey];
     //This will be a matrix of tile objects
     this.map = new Array(0);
-    this.curx = 0;
-    this.cury = 0;
 }
 //We use this to comprise the map
-function Tile() {
-    this.information = "";
+function Tile(information, action, checkAction) {
+    this.information = information;
     //Function to call
-    this.action = null;
+    this.action = action;
+    //Function to call when checking the tile
+    this.checkAction = checkAction;
 }
 
+function Item(name, action, type) {
+    this.name = name;
+    this.action = action;
+    this.type = type;
+}
+
+var output = {
+    clear: null,
+    print: null
+};
 
 
 //============================================
@@ -60,7 +69,6 @@ function startPlayer(name) {
     mainPlayer.location = "undefined";
 }
 
-
 function getPlayerHP() {
     return mainPlayer.char.currentHP;
 }
@@ -77,16 +85,21 @@ function doPlayerAction(fullAction) {
         case "owo":
         case "uwu":
         case "vwv":
-            gameOutputClear();
-            gameOutput("What's this?");
+            output.clear();
+            output.print("What's this?");
             break;
+        //Go
         case "go":
         case "move":
         case "walk":
         case "step":
+            if (gameStatus == 1) {
+                output.clear()
+                output.print("Cannot move while in battle")
+            }
             if (action.length == 1) {
-                gameOutputClear();
-                gameOutput("Go where?");
+                output.clear();
+                output.print("Go where?");
                 break;
             }
             switch (action[1]) {
@@ -104,25 +117,54 @@ function doPlayerAction(fullAction) {
                     break;
             }
             break;
-        case "usethistotest":
-            gameOutputClear();
-            gameOutput("This is a test\nOf Breaks");
+        case "target":
+            //Check what the player is trying to target
             break;
+        case "enemies":
+            break;
+        case "inventory":
+        case "bag":
+            output.clear();
+            for (let i = 0; i<player.char.inventory.length; i++) {
+                output.print("[" + i.toString() + "] " + player.char.inventory[i].name + "(" + player.char.inventory[i].type + ")")
+            }
+            break;
+            
+        //We'll keep this in as an easter egg beacuse why not
+        case "usethistotest":
+            output.clear();
+            output.print("This is a test\nOf Breaks");
+            break;
+            
+            
+            
+            
+        //This always needs to be by the default
+        case "ur":
+            if (action[1]=="mom") {
+                if (action[2]=="gay") {
+                    output.clear();
+                    output.print("no u");
+                    break;
+                }
+            }
         default:
-            gameOutputClear();
-            gameOutput("I don't recognize that action, sorry.");
+            output.clear();
+            output.print("I don't recognize that action, sorry.");
             break;
     }
 }
 
-var gameOutput = null;
+//The current status of the game
+//Values:
+//  0 = Roaming (Allows movement)
+//  1 = Battle (Allows attacking, disallows movement)
+var gameStatus = 0
 
 function setOutputFunction(func) {
-    gameOutput = func;
+    output.print = func;
 }
 
-var gameOutputClear = null;
-
 function setOutputClearFunction(func) {
-    gameOutputClear = func;
+    output.clear = func;
 }
