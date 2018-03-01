@@ -1,85 +1,70 @@
 body {
-/*    box-sizing: border-box;*/
-    background-color: #343434;
-    color: #fafafa;
-    font-family: monospace;
-    font-size: 20px;
-    padding-top: 100px;
-    margin: 0px;
-}
+  /*    box-sizing: border-box;*/
+  background-color: #343434;
+  color: #FAFAFA;
+  font-family: monospace;
+  font-size: 20px;
+  padding-top: 100px;
+  margin: 0px; }
 
 input {
-    border-radius: 5px;
-    border: none;
-}
+  border-radius: 5px;
+  border: none; }
 
 input[type="text"] {
-    background-color: #63BBFF;
-    color: #000000;
-    height: 30px;
-    width: 500px;
-}
+  background-color: #63BBFF;
+  color: #343434;
+  height: 30px;
+  width: 500px; }
 
 label {
-    font-size: 35px;
-}
+  font-size: 35px; }
 
 .infoowner {
-    border: .1px white solid;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    text-align: center;
-}
+  border: .1px white solid;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  text-align: center; }
 
-.infoowner>* {
-    width: 100%;
-}
+.infoowner > * {
+  width: 100%; }
 
 input[type="submit"] {
-    background-color: #63BBFF;
-    padding: 10px;
-}
+  background-color: #FAFAFA;
+  color: #343434;
+  padding: 10px; }
 
 p#out {
-    border-radius: 5px;
-    background-color: #232323;
-    max-width: 1000px;
-    display: table;
-    margin: auto;
-    padding: 20px;
-}
+  border-radius: 5px;
+  background-color: #232323;
+  max-width: 1000px;
+  display: table;
+  margin: auto;
+  padding: 20px; }
 
 form {
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 60px;
-}
-
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 60px; }
 
 #playerinput {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: baseline;
-}
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: baseline; }
 
 #playeractionstuff {
-    margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 #playerinfo {
-    margin-left: 33px;
-    margin-right: 33px;
-    margin-bottom: 60px;
-}
+  margin-left: 33px;
+  margin-right: 33px;
+  margin-bottom: 60px; }
 
 #playerinfo h2 {
-    text-align: center;
-}
+  text-align: center; }
 
 #playerinfo #headinghack {
-    margin: auto;
-}
-
+  margin: auto; }

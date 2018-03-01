@@ -1,0 +1,94 @@
+$backcolor: #343434;
+$backcolordark: #232323;
+$forecolor: #FAFAFA;
+$accentcolor: #63BBFF;
+
+body {
+/*    box-sizing: border-box;*/
+    background-color: $backcolor;
+    color: $forecolor;
+    font-family: monospace;
+    font-size: 20px;
+    padding-top: 100px;
+    margin: 0px;
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+}
+
+input[type="text"] {
+    background-color: $accentcolor;
+    color: $backcolor;
+    height: 30px;
+    width: 500px;
+}
+
+label {
+    font-size: 35px;
+}
+
+.infoowner {
+    border: .1px white solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    text-align: center;
+}
+
+.infoowner>* {
+    width: 100%;
+}
+
+input[type="submit"] {
+    background-color: $forecolor;
+    color: $backcolor;
+    padding: 10px;
+}
+
+p#out {
+    border-radius: 5px;
+    background-color: $backcolordark;
+    max-width: 1000px;
+    display: table;
+    margin: auto;
+    padding: 20px;
+}
+
+form {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 60px;
+}
+
+
+#playerinput {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: baseline;
+}
+
+#playeractionstuff {
+    margin-bottom: 10px;
+}
+
+#playerinfo {
+    margin-left: 33px;
+    margin-right: 33px;
+    margin-bottom: 60px;
+}
+
+#playerinfo h2 {
+    text-align: center;
+}
+
+#playerinfo #headinghack {
+    margin: auto;
+}
+
+@media screen and (max-width: 495px) {
+    
+}
